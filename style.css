@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+}
+
+#game {
+  position: relative;
+  width: fit-content;
+  padding: 80px;            /* 🔴 пространство для сердечек */
+  margin: 0 auto;
+  text-align: center;
+}
+
+#game {
+  overflow: visible;       /* 🔴 сердечки не обрезаются */
+}
+
+
+
+#girl {
+  width: 160px;          /* ← подбирай под свою модельку */
+  cursor: pointer;
+  display: block;
+}
+
+#title {
+  position: absolute;
+  bottom: 100%;          /* 🔴 висит НАД кнопкой */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;          /* можно меньше, если надо плотнее */
+  margin-bottom: 12px;   /* расстояние между тайтлом и кнопкой */
+  pointer-events: none;
+}
+.heart {
+  position: absolute;
+  pointer-events: none;
+  animation: floatUp 2.5s ease-out forwards;
+  transform: translate(-50%, 0);
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.4);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -180px) scale(1.4);
+  }
+}
