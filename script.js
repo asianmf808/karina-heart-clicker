@@ -3,7 +3,7 @@ const game = document.getElementById('game');
 const meow = document.getElementById('meow');
 
 girl.addEventListener('click', () => {
-  // звук
+  // воспроизведение звука
   meow.currentTime = 0;
   meow.play();
 
@@ -22,7 +22,7 @@ girl.addEventListener('click', () => {
 
   game.appendChild(heart);
 
-  // удаляем через 2 секунды
+  // удаляем сердечко через 2 секунды
   setTimeout(() => {
     heart.remove();
   }, 2000);
