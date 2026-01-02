@@ -1,9 +1,6 @@
 const girl = document.getElementById('girl');
 const game = document.getElementById('game');
-
-const heartImages = ['heart1.png', 'heart2.png'];
-
-const meow = new Audio('meow.mp3');
+const meow = document.getElementById('meow');
 
 girl.addEventListener('click', () => {
   // звук
@@ -14,35 +11,19 @@ girl.addEventListener('click', () => {
   const heart = document.createElement('img');
   heart.classList.add('heart');
 
-  // случайная картинка
-  const randomHeart =
-    heartImages[Math.floor(Math.random() * heartImages.length)];
-  heart.src = randomHeart;
+  // случайный выбор сердечка
+  heart.src = Math.random() < 0.5 ? 'heart1.png' : 'heart2.png';
 
-  // позиция кнопки
-  const rect = girl.getBoundingClientRect();
-  const gameRect = game.getBoundingClientRect();
-
-  // РАЗБРОС
- const spreadX = (Math.random() - 0.5) * 80;
-const spreadY = (Math.random() - 0.5) * 40;
-
-  const x =
-    rect.left - gameRect.left + rect.width / 2 + spreadX;
-  const y =
-    rect.top - gameRect.top + rect.height / 2 + spreadY;
-
-  heart.style.left = x + 'px';
-  heart.style.top = y + 'px';
-
-  // размер
-  const size = 20 + Math.random() * 30;
-  heart.style.width = size + 'px';
+  // случайная позиция внутри кнопки
+  const x = Math.random() * girl.offsetWidth - 20;
+  const y = Math.random() * girl.offsetHeight - 20;
+  heart.style.left = `${girl.offsetLeft + x}px`;
+  heart.style.top = `${girl.offsetTop + y}px`;
 
   game.appendChild(heart);
 
-  // удалить позже
+  // удаляем через 2 секунды
   setTimeout(() => {
     heart.remove();
-  }, 2500);
+  }, 2000);
 });
