@@ -1,25 +1,38 @@
+/* Фон всей страницы всегда белый */
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: white !important;
 }
 
+/* Контейнер с фиксированным белым фоном */
+#wrapper {
+  background: white !important; /* белый фон всегда */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: none !important;      /* убираем фильтры темы Telegram */
+
+  transform: scale(0.6667);      /* масштаб 1.5 раза меньше */
+  transform-origin: top center;
+}
+
+/* Игра */
 #game {
   position: relative;
   width: fit-content;
   text-align: center;
-  transform: scale(0.3333);      /* уменьшение в 2 раза от текущего */
-  transform-origin: top center;
-  background: white !important;
+  background: white;             /* блок тоже белый */
+  transform: none;               /* убираем масштаб отсюда */
 }
 
-
 #girl {
-  width: 160px;          /* подбирай под свою кнопку */
+  width: 160px;          /* подбирай под кнопку */
   cursor: pointer;
   display: block;
   margin: 0 auto;
@@ -27,30 +40,20 @@ body {
 
 #title {
   display: block;
-  margin: 0 auto 12px auto;   /* центрируем и расстояние до кнопки */
-  width: 260px;                /* подбирай под картинку тайтла */
+  margin: 0 auto 12px auto;  /* расстояние между тайтлом и кнопкой */
+  width: 260px;               /* подбирай под тайтл */
   pointer-events: none;
 }
 
 .heart {
   position: absolute;
-  width: 40px;                /* размер сердечка */
+  width: 40px; 
   height: 40px;
   pointer-events: none;
-  animation: rise 2s ease forwards; /* анимация сердечка */
+  animation: rise 2s ease forwards;
 }
 
 @keyframes rise {
   0% { opacity: 1; transform: translateY(0) scale(1); }
   100% { opacity: 0; transform: translateY(-150px) scale(1.2); }
 }
-
-/* Фон всей страницы всегда белый */
-
-
-
-
-
-
-
-
