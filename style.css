@@ -47,6 +47,37 @@ body {
 body {
   background: var(--tg-theme-bg-color, white);
 }
+/* Фон всей страницы всегда белый */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контейнер с фиксированным белым фоном */
+#wrapper {
+  background: white !important; /* белый фон всегда */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: none !important;       /* убираем фильтры темы Telegram */
+}
+
+/* Игра */
+#game {
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  transform: scale(0.3333);      /* масштаб */
+  transform-origin: top center;
+  background: white;              /* на всякий случай */
+}
+
 
 
 
