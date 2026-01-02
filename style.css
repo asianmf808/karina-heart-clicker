@@ -1,4 +1,4 @@
-/* Фон всегда белый */
+/* Белый фон всегда */
 body {
   margin: 0;
   padding: 0;
@@ -12,34 +12,38 @@ body {
 /* Контейнер игры */
 #game {
   position: relative;
-  width: fit-content;
   text-align: center;
-  padding: 120px;       /* больше места для сердечек */
+  padding: 120px;       /* место для сердечек */
+  width: fit-content;
   background: white;
   overflow: visible;
+
+  /* Увеличиваем всё сразу */
+  transform: scale(1.5);
+  transform-origin: top center; /* центрируем масштаб */
 }
 
-/* Кнопка (увеличена в 1.5 раза) */
+/* Кнопка */
 #girl {
-  width: 240px;   /* было 160px */
+  width: 160px;  
   cursor: pointer;
   display: block;
   margin: 0 auto;
 }
 
-/* Тайтл над кнопкой (увеличен) */
+/* Тайтл */
 #title {
   display: block;
-  margin: 0 auto 18px auto; /* расстояние увеличено */
-  width: 390px; /* было 260px */
+  margin: 0 auto 12px auto;
+  width: 260px;
   pointer-events: none;
 }
 
-/* Сердечки (увеличены) */
+/* Сердечки */
 .heart {
   position: absolute;
-  width: 60px;   /* было 40px */
-  height: 60px;  /* было 40px */
+  width: 40px;
+  height: 40px;
   pointer-events: none;
   animation: rise 2s ease forwards;
 }
