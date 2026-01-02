@@ -11,62 +11,34 @@ body {
 #game {
   position: relative;
   width: fit-content;
-  padding: 80px;            /* 🔴 пространство для сердечек */
-  margin: 0 auto;
   text-align: center;
+  transform: scale(0.6667);      /* уменьшаем в 1.5 раза */
+  transform-origin: top center;   /* масштабируем от центра сверху */
 }
-
-#game {
-  overflow: visible;       /* 🔴 сердечки не обрезаются */
-}
-
-
 
 #girl {
-  width: 160px;          /* ← подбирай под свою модельку */
+  width: 160px;          /* подбирай под свою кнопку */
   cursor: pointer;
   display: block;
+  margin: 0 auto;
 }
 
 #title {
-  position: absolute;
-  bottom: 100%;          /* 🔴 висит НАД кнопкой */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;          /* можно меньше, если надо плотнее */
-  margin-bottom: 12px;   /* расстояние между тайтлом и кнопкой */
+  display: block;
+  margin: 0 auto 12px auto;   /* центрируем и расстояние до кнопки */
+  width: 260px;                /* подбирай под картинку тайтла */
   pointer-events: none;
 }
+
 .heart {
   position: absolute;
+  width: 40px;                /* размер сердечка */
+  height: 40px;
   pointer-events: none;
-  animation: floatUp 2.5s ease-out forwards;
-  transform: translate(-50%, 0);
+  animation: rise 2s ease forwards; /* анимация сердечка */
 }
 
-@keyframes floatUp {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0) scale(0.4);
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -180px) scale(1.4);
-  }
+@keyframes rise {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-150px) scale(1.2); }
 }
-#game {
-  transform: scale(4);       /* увеличиваем в 2 раза */
-  transform-origin: top center;  /* масштабируем от центра сверху */
-  position: relative;
-}
-@media screen and (max-width: 768px) {
-  #game {
-    transform: scale(4);
-    transform-origin: top center;
-  }
-}
-
-
