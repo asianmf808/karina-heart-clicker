@@ -13,7 +13,6 @@ girl.addEventListener('click', () => {
   heart.src = hearts[Math.floor(Math.random() * hearts.length)];
 
   // Позиция в пределах кнопки и padding
-  const gameRect = game.getBoundingClientRect();
   const girlRect = girl.getBoundingClientRect();
 
   heart.style.left = Math.random() * (girlRect.width - 40) + 'px';
@@ -30,3 +29,4 @@ girl.addEventListener('click', () => {
     heart.remove();
   }, 2000);
 });
+
