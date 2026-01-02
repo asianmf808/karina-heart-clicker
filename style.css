@@ -58,8 +58,15 @@ body {
   }
 }
 #game {
-  transform: scale(2);       /* увеличиваем в 2 раза */
+  transform: scale(4);       /* увеличиваем в 2 раза */
   transform-origin: top center;  /* масштабируем от центра сверху */
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  #game {
+    transform: scale(4);
+    transform-origin: top center;
+  }
+}
+
 
