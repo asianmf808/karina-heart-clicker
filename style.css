@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center; /* по горизонтали */
   align-items: flex-start; /* по вертикали сверху */
-  background: white !important;
+  background: pink !important;
 }
 
 /* Контейнер игры */
@@ -51,3 +51,4 @@ body {
   0% { opacity: 1; transform: translateY(0) scale(1); }
   100% { opacity: 0; transform: translateY(-150px) scale(1.2); }
 }
+
