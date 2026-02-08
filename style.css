@@ -1,62 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ffccd5, #ffb6c1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
-}
-
-.container {
+    padding: 20px;
     text-align: center;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+    min-height: 100vh;
 }
 
-h1 {
-    color: #ff6b8b;
-    margin-bottom: 20px;
-}
-
-.hearts-count {
-    font-size: 2em;
-    color: #ff4081;
-    margin-bottom: 30px;
+#hearts {
+    font-size: 48px;
+    color: #ff3366;
+    margin: 40px 0;
     font-weight: bold;
 }
 
-/* ---------- ИСПРАВЛЕННАЯ КНОПКА ---------- */
-.heart-button {
+/* Стиль для исправленной кнопки */
+#clickButton {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    display: inline-block;
-    transition: transform 0.1s;
-    outline: none;
+    display: block;
+    margin: 20px auto;
+    /* Плавная анимация вместо изменения размеров */
+    transition: transform 0.1s ease;
 }
 
-.heart-button:active {
-    transform: scale(0.95); /* Плавное сжатие вместо пикселизации */
+/* Эффект нажатия - плавное уменьшение */
+#clickButton:active {
+    transform: scale(0.95);
 }
 
-.button-image {
-    width: 300px;
+/* Стиль для картинки внутри кнопки */
+#clickButton img {
+    width: 300px;     /* Твои исходные размеры */
     height: 150px;
     display: block;
-    pointer-events: none; /* Важно: клики проходят на кнопку */
-    transition: transform 0.1s;
-}
-
-.heart-button:active .button-image {
-    transform: scale(0.95); /* Дублируем для плавности */
-}
-
-p {
-    margin-top: 20px;
-    color: #666;
-    font-size: 1.1em;
+    /* Важно: отключаем события мыши у картинки, чтобы кнопка ловила клики */
+    pointer-events: none;
 }
