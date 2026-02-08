@@ -1,25 +1,26 @@
+// Твой исходный код, но без строк, портящих качество кнопки
 let hearts = 0;
 const heartsElement = document.getElementById('hearts');
 const clickButton = document.getElementById('clickButton');
 
+// Функция обновления счётчика
 function updateHearts() {
-    heartsElement.textContent = hearts;
+    heartsElement.textContent = hearts + ' hearts';
 }
 
-// Убрана логика изменения width/height - теперь анимация в CSS
+// Обработчик клика - ТОЛЬКО увеличивает счётчик
 clickButton.addEventListener('click', function() {
-    hearts++;
+    hearts += 1; // Одно сердце за клик
     updateHearts();
 });
 
-// Для мобильных устройств
+// Обработчик для мобильных устройств
 clickButton.addEventListener('touchstart', function(event) {
-    event.preventDefault(); // Предотвращаем выделение
-    hearts++;
+    event.preventDefault(); // Чтобы не было выделения
+    hearts += 1;
     updateHearts();
 });
 
 // Инициализация
 updateHearts();
-});
 
