@@ -7,19 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Lida Heart Clicker</h1>
-        <div class="hearts-count">
-            <span id="hearts">0</span> hearts
-        </div>
-        
-        <!-- ИСПРАВЛЕННАЯ КНОПКА -->
-        <button id="clickButton" class="heart-button">
-            <img src="clickme.png" alt="Click Me!" class="button-image">
-        </button>
-        
-        <p>Click the heart to earn hearts!</p>
-    </div>
+    <div id="hearts">0 hearts</div>
+    
+    <!-- ИСПРАВЛЕННАЯ КНОПКА: вместо <img> теперь <button> -->
+    <button id="clickButton">
+        <img src="clickme.png" alt="Click Me!">
+    </button>
     
     <script src="script.js"></script>
 </body>
